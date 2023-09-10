@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.URLConnection;
 import java.nio.file.Files;
@@ -75,24 +76,29 @@ public class HttpHandler implements Runnable {
 	 * @throws Exception
 	 */
 	private void serverRequest(InputStream input, OutputStream output, String root) throws Exception {
-		String line;
 		BufferedReader bf = new BufferedReader(new InputStreamReader(input));
+		//PrintWriter out = new PrintWriter(output, true);
+		//out.write(bf.read());
+		
+		String line;
 		while ((line = bf.readLine()) != null) {
 			if (line.length() <= 0) {
 				break;
 			}
 			if (line.startsWith("GET")) {
 				String filename= line.split(" ")[1].substring(1);
+				System.out.println("1) " + line + '\n' + filename);//DEBUG
 				File resource = new File(root + File.separator + filename);
 				if (resource.isFile()) {
 					res = filename;
+					System.out.println("2) " + resource.toString());//DEBUG
 					populateResponse(resource, output);
 					Server.printResult(res, socket.getPort(), socket.getRemoteSocketAddress().toString());
 				} else {
 					String Content_NOT_FOUND = "<html><head></head><body><h1>File Not Found</h1></body></html>";
 					
 					String REQ_NOT_FOUND = "HTTP/1.1 404 Not Found\n\n";
-					String header = REQ_NOT_FOUND+ Content_NOT_FOUND;
+					String header = REQ_NOT_FOUND + Content_NOT_FOUND;
 					
 					output.write(header.getBytes());
 				}
