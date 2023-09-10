@@ -13,23 +13,21 @@ public class Server {
 	private static int PORT = 8080;
 	private ServerSocket serverSocket;
 	private static HashMap<String,Integer> requestedRes = new HashMap<String,Integer>();
-	private static final String DELIMITER = "|";
+	private static final String DELIMITER = " | ";
 	
 	public static void main(String[] args) {
 		try {
 			System.out.println("\n====================Server Details====================");
 			System.out.println("Server Machine: "+ InetAddress.getLocalHost().getCanonicalHostName());
-			System.out.println("Port number: " + PORT);
-			System.out.println();
+			System.out.println("Port number: " + PORT + "\n");
 		} catch (UnknownHostException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+
 		//Here one instance of server is started..	
 		try {	
 			Server server = new Server();
-			server.start();
-			
+			server.start();	
 		} catch (IOException e) {
 			System.err.println("Error occured:" + e.getMessage());
 			System.exit(0);

@@ -1,1 +1,1 @@
-# java-server-project
+# Java server project

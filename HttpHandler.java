@@ -33,7 +33,7 @@ public class HttpHandler implements Runnable {
 				socket.close();
 				System.exit(0);
 			} catch (IOException e1) {
-				System.err.println("Error Closing socket Connection.");
+				System.err.println("Error Closing socket Connection.\n" + e1.getMessage());
 				System.exit(0);
 			}
 			System.err.println("Server is Terminating!");
@@ -46,13 +46,16 @@ public class HttpHandler implements Runnable {
 	private void handleRequest() throws Exception {
 		InputStream input;
 		OutputStream output;
+		String folderName = "www"; //folder name
 		//
-		File parent = new File(System.getProperty("user.dir"));
-		File root = new File(parent.getAbsolutePath() + File.separator + "www");//new File("C:\\dev\\java\\HTTPServer\\www");
-		//System.out.println(parent.getAbsolutePath());
-		//System.out.println(root.getAbsolutePath() + '\t' + root.exists());
-		//File test = new File(parent.getAbsolutePath() + File.separator + "www");
-		//System.out.println(test.getAbsolutePath() + '\t' + test.exists());
+		File parent = new File(System.getProperty("user.dir")); //directory of executable file
+		File root;
+		if (!folderName.isEmpty())
+			root = new File(parent.getAbsolutePath() + File.separator + folderName);
+		else
+			root = parent;
+		//System.out.println(root.getAbsolutePath());
+
 		if (root.exists()) {
 			input = socket.getInputStream();
 			output = socket.getOutputStream();
@@ -60,7 +63,7 @@ public class HttpHandler implements Runnable {
 			output.close();
 			input.close();
 		} else {
-			throw new Exception("www directory not present!");
+			throw new Exception(root.getAbsolutePath() + " directory not present!\n");
 		}
 		socket.close();
 	}
