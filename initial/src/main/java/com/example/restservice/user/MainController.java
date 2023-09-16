@@ -10,7 +10,7 @@ public class MainController {
     public String showForm(Model model) {
         User user = new User();
         model.addAttribute("user", user);
-        return "register_form";
+        return "register_form"; //КАК?!?
     }
 
     @PostMapping("/register")
