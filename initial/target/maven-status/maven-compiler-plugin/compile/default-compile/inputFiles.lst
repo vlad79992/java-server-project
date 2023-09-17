@@ -1,4 +1,7 @@
-C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\GreetingController.java
+C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\secure\MvcConfig.java
+C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\user\User.java
+C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\imageUpload\UploadController.java
 C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\RestServiceApplication.java
-C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\Greeting.java
-C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\MyRestController.java
+C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\TestController2.java
+C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\user\MainController.java
+C:\dev\java\java-server-project\initial\src\main\java\com\example\restservice\secure\WebSecurityConfig.java

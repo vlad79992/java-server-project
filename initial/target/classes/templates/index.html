@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Spring Boot Form Demo</title>
 </head>
 <body>
     <div align="center">
-        <h1>Spring Boot Form Demo</h1>
-        <a href="/register">Click here to register</a> <br/>
-        <a href="/imageUpload">Click here to upload image</a>
+        <h1>Welcome!</h1>
+
+        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p> <br/>
+        <a href="/register">Click here to register (see name)</a> <br/>
+        <a href="/imageUpload">Click here to upload image</a> <br/>
     </div>
 </body>
 </html>

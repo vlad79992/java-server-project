@@ -2,13 +2,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RestServiceApplication",
+            "request": "launch",
+            "mainClass": "initial.src.main.java.com.example.restservice.RestServiceApplication",
+            "projectName": "java-server-project_138a759f"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-RestServiceApplication<rest-service-initial>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.restservice.RestServiceApplication",
             "projectName": "rest-service-initial",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53780 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=rest-service-initial"
         }
     ]
 }
