@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
 @Controller
-public class MainController {
+public class UserController {
     @GetMapping("/register")
     public String showForm(Model model) {
         User user = new User();
@@ -16,6 +16,6 @@ public class MainController {
     @PostMapping("/register")
     public String submitForm(@ModelAttribute("user") User user) {
         System.out.println(user);
-        return "register_success";
+        return "register/register_success";
     }
 }

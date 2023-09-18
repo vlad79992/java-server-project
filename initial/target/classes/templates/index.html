@@ -2,8 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="https://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Spring Boot Form Demo</title>
+    <meta charset="ISO-8859-1">
+    <title>Spring Boot Form Demo</title>
+    <link href=http://fonts.googleapis.com/css?family=Quicksand
+                rel=stylesheet type=text/css>
+        <link rel=stylesheet th:href=@{/css/screen.css}>
+        <meta name=viewport
+                content="width=device-width, initial-scale=0.8,
+                minimum-scale=0.8, maximum-scale=10">
 </head>
 <body>
     <div align="center">
@@ -12,6 +18,7 @@
         <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p> <br/>
         <a href="/register">Click here to register (see name)</a> <br/>
         <a href="/imageUpload">Click here to upload image</a> <br/>
+        <a href="/mathExpression">Click here to create mathematical expression</a> <br/>
     </div>
 </body>
 </html>

@@ -3,6 +3,12 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Registration Success</title>
+    <link href=http://fonts.googleapis.com/css?family=Quicksand
+                rel=stylesheet type=text/css>
+        <link rel=stylesheet th:href=@{/css/screen.css}>
+        <meta name=viewport
+                content="width=device-width, initial-scale=0.8,
+                minimum-scale=0.8, maximum-scale=10">
 </head>
 <body>
 <div align="center">
@@ -11,6 +17,7 @@
     <span th:text="${user.firstName}"></span><br/>
     <span>Second name:</span>
     <span th:text="${user.secondName}"></span><br/>
+    <a href="/index">Go to main page</a> <br/>
 </div>
 </body>
 </html>

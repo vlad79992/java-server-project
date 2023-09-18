@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>User Registration</title>
+    <meta charset="ISO-8859-1">
+    <title>User Registration</title>
+    <link href=http://fonts.googleapis.com/css?family=Quicksand
+                rel=stylesheet type=text/css>
+        <link rel=stylesheet th:href=@{/css/screen.css}>
+        <meta name=viewport
+                content="width=device-width, initial-scale=0.8,
+                minimum-scale=0.8, maximum-scale=10">
 </head>
 <body>
 <div align="center">
@@ -14,7 +20,9 @@
         <label>Second name:</label>
         <input type="text" th:field="*{secondName}" /><br/>
 
-        <button type="submit">Register</button>    
+        <button type="submit">Register</button>
+
+        <a href="/index">Go to main page</a> <br/> 
     </form>
 </div>
 </body>
